@@ -1,22 +1,44 @@
 import Vue from 'vue'
+// 引入路由
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/oneroute/my'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/oneroute',
+    component: () => import('@/views/Oneroute'),
+    children: [
+      {
+        path: 'my',
+        name: 'my', // 我的
+        component: () => import('@/views/Oneroute/My')
+      },
+      {
+        path: 'home',
+        name: 'home', // 首页
+        component: () => import('@/views/Oneroute/Home')
+      },
+      {
+        path: 'look',
+        name: 'look', // 看房
+        component: () => import('@/views/Oneroute/LookRomm')
+      },
+      {
+        path: 'tidings',
+        name: 'tidings', // 资讯
+        component: () => import('@/views/Oneroute/Tidings')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/Login')
   }
 ]
 
