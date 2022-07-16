@@ -5,19 +5,32 @@
     <div class="my-title">
       <!-- 背景图 -->
       <img
-        v-if="srr"
-        src="http://liufusong.top:8080/img/profile/bg.png"
+        v-if="isLogin"
+        src="http://liufusong.top:8080/img/avatar.png"
         alt=""
       />
-      <img v-else src="http://liufusong.top:8080/img/avatar.png" alt="" />
+
+      <img v-else src="http://liufusong.top:8080/img/profile/bg.png" alt="" />
       <!-- 登录框 -->
       <div class="my-title-login">
         <!-- 头像 -->
         <div class="avatar">
           <img src="http://liufusong.top:8080/img/profile/avatar.png" alt="" />
         </div>
+        <!-- 登录成功--显示 -->
+        <div v-if="isLogin" class="my-title-btn">
+          <div>
+            <p>好客_845296</p>
+          </div>
+          <van-button class="vanbtn vanbtn2" type="primary" @click="logout"
+            >退出</van-button
+          >
+          <div class="material">
+            <p>编辑个人资料<van-icon name="play" /></p>
+          </div>
+        </div>
         <!-- 登录按钮 -->
-        <div v-if="srr" class="my-title-btn">
+        <div v-else class="my-title-btn">
           <div>
             <p>游客</p>
           </div>
@@ -25,21 +38,11 @@
             >去登录</van-button
           >
         </div>
-        <!-- 登录成功--显示 -->
-        <div v-else class="my-title-btn">
-          <div>
-            <p>好客_845296</p>
-          </div>
-          <van-button class="vanbtn vanbtn2" type="primary">退出</van-button>
-          <div class="material">
-            <p>编辑个人资料<van-icon name="play" /></p>
-          </div>
-        </div>
       </div>
     </div>
     <!-- 导航宫格 -->
-    <van-grid :border="false" :column-num="3">
-      <van-grid-item icon="star-o" text="我的收藏" />
+    <van-grid :border="false" clickable :column-num="3">
+      <van-grid-item icon="star-o" to="/collect" text="我的收藏" />
       <van-grid-item icon="wap-home-o" text="我的出租" />
       <van-grid-item icon="clock-o" text="看房记录" />
       <van-grid-item icon="debit-pay" text="成为房主" />
@@ -56,12 +59,29 @@
 <script>
 export default {
   data () {
-    return {
-      srr: true
+    return {}
+  },
+  computed: {
+    isLogin () {
+      console.log(this.$store.state)
+      return !!this.$store.state.user
     }
   },
   methods: {
-    Onif () {}
+    logout () {
+      this.$dialog
+        .confirm({
+          title: '标题',
+          message: '弹窗内容'
+        })
+        .then(() => {
+          this.$store.commit('setUser', '')
+          // on confirm
+        })
+        .catch(() => {
+          // on cancel
+        })
+    }
   }
 }
 </script>

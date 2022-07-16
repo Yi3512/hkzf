@@ -1,9 +1,9 @@
 @font-face {
   font-family: "toutiao"; /* Project id 3509656 */
-  src: url('iconfont.woff2?t=1657679760243') format('woff2'),
-       url('iconfont.woff?t=1657679760243') format('woff'),
-       url('iconfont.ttf?t=1657679760243') format('truetype'),
-       url('iconfont.svg?t=1657679760243#toutiao') format('svg');
+  src: url('iconfont.woff2?t=1657888394035') format('woff2'),
+       url('iconfont.woff?t=1657888394035') format('woff'),
+       url('iconfont.ttf?t=1657888394035') format('truetype'),
+       url('iconfont.svg?t=1657888394035#toutiao') format('svg');
 }
 
 .toutiao {
@@ -12,6 +12,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.toutiao-home:before {
+  content: "\e621";
 }
 
 .toutiao-lishi:before {

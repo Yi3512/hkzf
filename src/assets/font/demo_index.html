@@ -55,6 +55,12 @@
           <ul class="icon_lists dib-box">
           
             <li class="dib">
+              <span class="icon toutiao">&#xe621;</span>
+                <div class="name">home</div>
+                <div class="code-name">&amp;#xe621;</div>
+              </li>
+          
+            <li class="dib">
               <span class="icon toutiao">&#xe604;</span>
                 <div class="name">历史</div>
                 <div class="code-name">&amp;#xe604;</div>
@@ -198,10 +204,10 @@
 <pre><code class="language-css"
 >@font-face {
   font-family: 'toutiao';
-  src: url('iconfont.woff2?t=1657679760243') format('woff2'),
-       url('iconfont.woff?t=1657679760243') format('woff'),
-       url('iconfont.ttf?t=1657679760243') format('truetype'),
-       url('iconfont.svg?t=1657679760243#toutiao') format('svg');
+  src: url('iconfont.woff2?t=1657888394035') format('woff2'),
+       url('iconfont.woff?t=1657888394035') format('woff'),
+       url('iconfont.ttf?t=1657888394035') format('truetype'),
+       url('iconfont.svg?t=1657888394035#toutiao') format('svg');
 }
 </code></pre>
           <h3 id="-iconfont-">第二步：定义使用 iconfont 的样式</h3>
@@ -226,6 +232,15 @@
       </div>
       <div class="content font-class">
         <ul class="icon_lists dib-box">
+          
+          <li class="dib">
+            <span class="icon toutiao toutiao-home"></span>
+            <div class="name">
+              home
+            </div>
+            <div class="code-name">.toutiao-home
+            </div>
+          </li>
           
           <li class="dib">
             <span class="icon toutiao toutiao-lishi"></span>
@@ -442,6 +457,14 @@
       </div>
       <div class="content symbol">
           <ul class="icon_lists dib-box">
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#toutiao-home"></use>
+                </svg>
+                <div class="name">home</div>
+                <div class="code-name">#toutiao-home</div>
+            </li>
           
             <li class="dib">
                 <svg class="icon svg-icon" aria-hidden="true">

@@ -66,6 +66,7 @@ export default {
     async login () {
       const res = await login(this.username, this.password)
       console.log(res)
+      this.$store.commit('setUser', res.data.body.token)
       if (res.data.status !== 200) {
         return Toast({ message: '你的账号或者密码错误', icon: 'close' })
       }
