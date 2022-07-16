@@ -18,4 +18,15 @@ export default {
 }
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+:deep(.van-nav-bar__content) {
+  background-color: #21b97a;
+  .van-nav-bar__title {
+    color: #fff;
+    font-size: 18px;
+  }
+  .van-icon {
+    color: #fff;
+  }
+}
+</style>

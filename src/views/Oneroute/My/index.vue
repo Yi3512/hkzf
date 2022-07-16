@@ -43,7 +43,7 @@
     <!-- 导航宫格 -->
     <van-grid :border="false" clickable :column-num="3">
       <van-grid-item icon="star-o" to="/collect" text="我的收藏" />
-      <van-grid-item icon="wap-home-o" text="我的出租" />
+      <van-grid-item icon="wap-home-o" to="/rent" text="我的出租" />
       <van-grid-item icon="clock-o" text="看房记录" />
       <van-grid-item icon="debit-pay" text="成为房主" />
       <van-grid-item icon="contact" text="个人资料" />
@@ -64,6 +64,7 @@ export default {
   computed: {
     isLogin () {
       console.log(this.$store.state)
+      console.log(this.$store.state.user)
       return !!this.$store.state.user
     }
   },

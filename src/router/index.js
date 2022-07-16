@@ -44,6 +44,11 @@ const routes = [
     path: '/collect',
     name: 'collect',
     component: () => import('@/views/Oneroute/My/Collect')
+  },
+  {
+    path: '/rent',
+    name: 'rent',
+    component: () => import('@/views/Oneroute/My/Rent')
   }
 ]
 

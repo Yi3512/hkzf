@@ -13,3 +13,21 @@ export const login = (username, password) => {
     data: { username, password }
   })
 }
+/**
+ * 获取收藏列表
+ * @returns Promise
+ */
+export const collectFn = () => {
+  return request({
+    url: '/user/favorites'
+  })
+}
+/**
+ * 获取收藏列表
+ * @returns Promise
+ */
+export const getrent = () => {
+  return request({
+    url: '/user/houses'
+  })
+}
