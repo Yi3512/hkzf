@@ -2,7 +2,12 @@
   <div>
     <my tt="房屋管理"></my>
     <van-list>
-      <div class="Listbox" v-for="(item, index) in myrent" :key="index">
+      <div
+        class="Listbox"
+        v-for="(item, index) in myrent"
+        :key="index"
+        @click="toHouse"
+      >
         <div class="List">
           <div class="ListImg">
             <img :src="baseUrl + item.houseImg" alt="" />
@@ -37,6 +42,11 @@ export default {
     this.getrent()
   },
   methods: {
+    toHouse () {
+      this.$router.push({
+        name: 'house'
+      })
+    },
     async getrent () {
       try {
         const {

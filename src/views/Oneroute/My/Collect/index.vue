@@ -1,21 +1,25 @@
 <template>
   <div>
     <my tt="收藏列表"></my>
-    <van-list
-    >
-      <div class="Listbox" v-for="(item, index) in mycollect" :key="index">
+    <van-list>
+      <div
+        class="Listbox"
+        v-for="(item, index) in mycollect"
+        :key="index"
+        @click="toHouse"
+      >
         <div class="List">
           <div class="ListImg">
-            <img
-              :src="baseUrl+item.houseImg"
-              alt=""
-            />
+            <img :src="baseUrl + item.houseImg" alt="" />
           </div>
           <div class="ListTitle">
-            <h3>{{item.title}}</h3>
-            <p>{{item.desc}}</p>
-            <p>{{item.tags[0]}}</p>
-            <p><span>{{item.price}}</span>元/月</p>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+            <p>{{ item.tags[0] }}</p>
+            <p>
+              <span>{{ item.price }}</span
+              >元/月
+            </p>
           </div>
         </div>
       </div>
@@ -38,6 +42,11 @@ export default {
     this.collectFn()
   },
   methods: {
+    toHouse () {
+      this.$router.push({
+        name: 'house'
+      })
+    },
     async collectFn () {
       try {
         const { data } = await collectFn()

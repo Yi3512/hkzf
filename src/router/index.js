@@ -36,19 +36,29 @@ const routes = [
     ]
   },
   {
-    path: '/login',
+    path: '/login', // 登录
     name: 'login',
     component: () => import('@/views/Login')
   },
   {
     path: '/collect',
-    name: 'collect',
+    name: 'collect', // 我的收藏
     component: () => import('@/views/Oneroute/My/Collect')
   },
   {
     path: '/rent',
-    name: 'rent',
+    name: 'rent', // 我的出租
     component: () => import('@/views/Oneroute/My/Rent')
+  },
+  {
+    path: '/house',
+    name: 'house', // 房屋详情
+    component: () => import('@/views/House')
+  },
+  {
+    path: '/citylist', // 城市列表
+    name: 'citylist',
+    component: () => import('@/views/CityList')
   }
 ]
 

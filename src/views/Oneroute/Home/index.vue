@@ -4,11 +4,13 @@
     <div class="home-search">
       <div class="left-ss">
         <!-- 地点选择 -->
-        <div class="dizhi">北京<van-icon name="play" /></div>
+        <div class="dizhi" @click="$router.push('/citylist')">
+          {{ $store.state.hkzf_city.label }}<van-icon name="play" />
+        </div>
         <span class="xian"></span>
         <!-- 搜索框 -->
         <div>
-          <van-icon name="search" /><input
+          <van-icon name="search" class="icon-search" /><input
             type="text"
             placeholder="请输入小区或地址"
           />
@@ -114,7 +116,11 @@ export default {
         'http://liufusong.top:8080/img/swiper/3.png'
       ]
     }
-  }
+  },
+  created () {
+    this.add()
+  },
+  methods: {}
 }
 </script>
 
@@ -134,18 +140,22 @@ export default {
     display: flex;
     background-color: #fff;
     border-radius: 3px;
+    align-items: center;
     width: 300px;
     height: 34px;
-    line-height: 34px;
+    // line-height: 34px;
     .dizhi {
       margin-left: 5px;
       font-size: 14px;
+      .van-icon {
+        margin-left: 2px;
+        transform: rotate(90deg);
+        font-size: 12px;
+        color: #7f7f80;
+      }
     }
-    .van-icon {
-      margin-left: 2px;
-      transform: rotate(90deg);
-      font-size: 12px;
-      color: #7f7f80;
+    .icon-search {
+      font-size: 15px;
     }
     .xian {
       height: 15px;

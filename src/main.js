@@ -9,6 +9,7 @@ import 'amfe-flexible'
 import '@/assets/font/iconfont.css'
 // 引入初始化样式
 import './styles/base.css'
+import pinyin from 'js-pinyin'
 // 引入vant
 import Vant from 'vant'
 import 'vant/lib/index.css'
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  pinyin,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app')
